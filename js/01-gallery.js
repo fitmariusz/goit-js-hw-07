@@ -1,6 +1,8 @@
-import { galleryItems } from './gallery-items.js';
 
-function addCssFile() {
+
+import { galleryItems } from './gallery-items.js';
+// Change code below this line
+function addJsFile() {
 
     var link = document.createElement("link");
     link.rel = "stylesheet";
@@ -13,7 +15,7 @@ function addCssFile() {
     document.getElementsByTagName("body")[0].appendChild(script);
 }
 
-addCssFile()
+addJsFile()
 const ulGallery = document.querySelector(".gallery");
 
 galleryItems.forEach((item) => {
@@ -48,5 +50,4 @@ ulGallery.addEventListener("click", (event) => {
         }
     });
 });
-
 
