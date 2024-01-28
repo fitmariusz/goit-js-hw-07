@@ -22,25 +22,37 @@ galleryItems.forEach((item) => {
     image.setAttribute('class', 'gallery__image');
     image.setAttribute('src', item.preview);
     image.setAttribute('alt', item.description);
+    image.setAttribute('href', item.original);
     aImage.append(image);
     divBoxImage.append(aImage);
     ulGallery.append(divBoxImage);
 });
 
 
-ulGallery.addEventListener("click", clickImage);
+ulGallery.addEventListener("click", (event) => {
+  event.preventDefault();
 
-function clickImage(event) {
+  const lightbox = basicLightbox.create(`
+    <img src="${event.target.href}" width="800" height="600">
+  `);
 
-    console.log('test');
+  lightbox.show();
+});
+
+
+// ulGallery.addEventListener("click", clickImage);
+
+// function clickImage(event) {
+
+//     console.log('test');
     
 
-// const instance = basicLightbox.create(`
-//     <img src="assets/images/image.png" width="800" height="600">
-// `)
+// // const instance = basicLightbox.create(`
+// //     <img src="assets/images/image.png" width="800" height="600">
+// // `)
 
-// instance.show()
-}
+// // instance.show()
+// }
 
 
 
