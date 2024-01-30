@@ -18,7 +18,7 @@ function addJsFile() {
 addJsFile()
 const ulGallery = document.querySelector(".gallery");
 
-galleryItems.forEach((item) => {
+const arrayDiv=galleryItems.map((item) => {
     // // const ulImage=getElementsByClassName('gallery')
     const divBoxImage = document.createElement("div");
     divBoxImage.setAttribute('class', 'gallery__item');
@@ -31,9 +31,10 @@ galleryItems.forEach((item) => {
     image.dataset.href=item.original;
     aImage.append(image);
     divBoxImage.append(aImage);
-    ulGallery.append(divBoxImage);
+    console.log(divBoxImage);
+    return divBoxImage;
 });
-
+ulGallery.append(...arrayDiv);
 
 ulGallery.addEventListener("click", (event) => {
     event.preventDefault();
